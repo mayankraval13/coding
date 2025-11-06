@@ -1,8 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
+const docUrl = process.env.GOOGLE_DOC_URL;
 export default async function handler(req, res) {
-  const docUrl = process.env.GOOGLE_DOC_URL;
-
   try {
     const response = await fetch(docUrl);
     const html = await response.text();
